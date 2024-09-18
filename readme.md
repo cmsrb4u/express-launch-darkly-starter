@@ -1,4 +1,4 @@
-## Creating customized user experiences using Express JS and LaunchDarkly segment targeting
+## Creating customized user experiences with Express JS and LaunchDarkly segment targeting
 
 Example [Express](https://expressjs.com/) app that can be integrated with [LaunchDarkly's Node.js server side SDK](https://docs.launchdarkly.com/sdk/server-side/node-js).
 
