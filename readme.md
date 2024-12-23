@@ -4,11 +4,7 @@ Example [Express](https://expressjs.com/) app that can be integrated with [Launc
 
 ### How to get started:
 
-clone this repo on to your local machine:
-
-`git clone https://github.com/annthurium/express-launchdarkly-starter`
-
-Log in to your [LaunchDarkly](https://launchdarkly.com/) account (or [sign up for a free one here](https://launchdarkly.com/).) Copy your SDK key. Paste the key into the `.env.example` file. Rename `.env.example` file to .env
+Log in to your [LaunchDarkly](https://launchdarkly.com/) account (or [sign up for a free one here](https://launchdarkly.com/).) Copy your SDK key. Paste the key into the `.env` file.
 
 With this setup, the LaunchDarkly SDK can access the credentials locally but you won’t accidentally commit them to source control and compromise your security.
 
@@ -20,8 +16,12 @@ Run the server:
 
 `npm start`
 
-If you load http://127.0.0.1:3000/ in the browser, you should see a "hello world" page.
+The code defines a route for the root URL ("/") that:
+Creates a LaunchDarkly context object with user information (kind, key, email).
 
-## License
+Uses the ldClient.variation() method to evaluate a feature flag ("show-student-version") for the given context.
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Based on the feature flag value, redirects the user to either student.html or enterprise.html.
+
+If you load http://127.0.0.1:3000/ in the browser, you should see a web page accordingly.
+
